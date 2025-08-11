@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 
 const opensans = Open_Sans({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
 
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   );
