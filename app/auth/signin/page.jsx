@@ -1,11 +1,26 @@
+
 import React from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { signIn } from '@/auth';
-const page = () => {
+import { auth, signIn } from '@/auth';
+import { redirect } from 'next/navigation';
+import Authemail from '@/components/Authemail';
+
+const page = async () => {
+  const session = await auth()
+
+  if (session) {
+    redirect("/")
+  }
+
+  async function emailLogin(formData) {
+    "use server"
+    const email = formData.get("email");
+    await signIn("email", { email })
+  }
   return (
-    <main className="min-h-dvh flex ">
+    <main className="min-h-[120vh] flex  ">
 
 
       <div className=' min-h-dvh w-[45%]  bg-no-repeat max-lg:hidden bg-center bg-[url(/sign.png)]'>
@@ -18,6 +33,8 @@ const page = () => {
           <div className='w-full space-y-5 max-md:px-2'>
 
 
+
+           <Authemail/>
 
             <form
               action={async () => {

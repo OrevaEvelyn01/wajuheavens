@@ -10,7 +10,7 @@ const Footer = () => {
 
               <Image src={"/waju2.png"} alt="logo" width={1000} height={1000} className="w-8 h-8" />
 
-                <p className='text-4xl  font-semibold '> WajuHeavens</p>
+                <p className='text-4xl  font-semibold max-lg:text-2xl'> WajuHeavens</p>
             </Link >
 
             <div className='flex flex-col md:flex-row md:items-center justify-between gap-5 '>
