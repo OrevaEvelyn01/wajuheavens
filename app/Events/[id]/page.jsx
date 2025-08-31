@@ -3,7 +3,6 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '@/lib/firebase.config';
 import Reviews from '../../../components/Reviews';
 import Image from 'next/image';
-import Imageslide from '@/components/imageslide';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
 import Fullreviews from '@/app/Events/[id]/fullreviews';
