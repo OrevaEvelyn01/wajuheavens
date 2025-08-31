@@ -83,7 +83,7 @@ export default function Page() {
               alt={"Wedding Photos"}
               width={1000}
               height={1000}
-              className="w-full relative  h-[75vh]  "
+              className="w-full relative h-[60vh] md:h-[75vh]  "
 
             />
             <div className="flex gap-4 absolute bottom-5 right-10" >
@@ -202,7 +202,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center px-40 gap-10 pb-15 mt-28"  >
+      <section className="flex flex-col items-center px-30 gap-10 pb-15 mt-28"  >
 
         <h1 className="text-5xl text-[#073f3f] max-lg:text-3xl">About Us</h1>
 

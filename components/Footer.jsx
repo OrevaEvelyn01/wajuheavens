@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <main className='bg-[#073f3f] p-10  flex flex-col gap-20  justify-between text-white'>
 
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center  flex-col md:flex-row'>
 
 
 

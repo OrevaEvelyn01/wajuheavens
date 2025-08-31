@@ -158,12 +158,11 @@ const Navbar = () => {
                             <MenuItem onClick={handleClose}>
                                 <Link href={"/profile"}> Profile</Link>
                             </MenuItem>
-                            <MenuItem onClick={handleClose}><Link href={"/drop-reviews"}>Book your services</Link></MenuItem>
                             <MenuItem onClick={handleClose} > <button onClick={() => signOut()}> Sign Out</button></MenuItem>
                         </Menu>
 
                     </div>) : (<Link href={"/auth/signin"}
-                        className="text-lg hover:text-yellow-700 hover:underline">Sign In</Link>)
+                        className="text-2xl hover:text-yellow-700 hover:underline">Sign In</Link>)
 
                 }
                 </div>
