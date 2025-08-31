@@ -10,27 +10,29 @@ const Footer = () => {
     return (
         <main className='bg-[#073f3f] p-10  flex flex-col gap-20  justify-between text-white'>
 
-            <div className='flex justify-between items-center  flex-col md:flex-row'>
+            <div className='flex flex-col justify-between items-center  gap-15  '>
 
 
-
-                <Link href={"/"} className='flex gap-5 items-center' >
+                <div> <Link href={"/"} className='flex gap-5 items-center' >
 
                     <Image src={"/waju2.png"} alt="logo" width={1000} height={1000} className="w-8 h-8" />
 
                     <p className='text-4xl  font-semibold max-lg:text-2xl'> WajuHeavens</p>
-                </Link >
+                </Link ></div>
 
 
-                <div className='flex gap-5 text-[#073f3f]'> 
-                   <button className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'><FaFacebookF  /></button> 
-                   <button  className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'> <FaXTwitter /></button>
-                   <button  className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'><FaInstagram /></button> 
-                   <button  className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'> <FaTiktok /></button>
+
+                <div className='flex gap-5 text-[#073f3f]'>
+                    <button className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'><FaFacebookF /></button>
+                    <button className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'> <FaXTwitter /></button>
+                    <button className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'><FaInstagram /></button>
+                    <button className=' bg-[#fffff0] w-8 h-8  rounded-full flex items-center justify-center'> <FaTiktok /></button>
                 </div>
 
 
             </div>
+
+
             <div className='flex flex-col md:flex-row md:items-center justify-between gap-5 '>
                 <p> &copy; WajuHeavens. All rights reserved.</p>
 
