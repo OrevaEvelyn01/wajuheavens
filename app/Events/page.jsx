@@ -9,12 +9,11 @@ import { redirect } from 'next/navigation';
 
 const page = async () => {
 
-   const session = await auth();
     
   return (
     <div>
       
-    <Eventlist session={session}/>
+    <Eventlist />
     </div>
   )
 }
