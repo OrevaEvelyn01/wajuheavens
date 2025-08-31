@@ -9,7 +9,8 @@ import { redirect } from 'next/navigation';
 
 const page = async () => {
 
-  
+   const session = await auth();
+    
   return (
     <div>
       
