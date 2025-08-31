@@ -19,7 +19,6 @@ const UpdateProfile = ({ uid, userName }) => {
             await updateDoc(userRef, { name })
             alert("Profile updated successfully")
         } catch (error) {
-            console.error("Error updating profile", error)
             alert("Oops!. An error occured. Please try again later")
         }
     }

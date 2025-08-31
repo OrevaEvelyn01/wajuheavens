@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '@/lib/firebase.config';
@@ -20,16 +18,13 @@ const singleReview = async (id) => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data());
             return { id, ...docSnap.data() }
         } else {
             // docSnap.data() will be undefined in this case
-            console.log("No such document!");
         }
 
     } catch (error) {
-        //    console.error('An error occured', error);
-        //     alert("Oops, something went wrong")
+       //     alert("Oops, something went wrong")
     }
 
 

@@ -14,18 +14,15 @@ const Eventlist = () => {
     const querySnapshot = await getDocs(collection(db, "events"));
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
 
       const eventsObject = {
         id: doc.id,
         ...doc.data()
       }
 
-      console.log(eventsObject)
       eventsArray.push(eventsObject)
     });
 
-    console.log(eventsArray);
     setEvents(eventsArray)
 
   }

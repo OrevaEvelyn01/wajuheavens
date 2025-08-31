@@ -18,11 +18,9 @@ const page = () => {
       })
       .then(
         (result) => {
-          console.log('SUCCESS!');
           e.target.reset()
         },
         (error) => {
-          console.log('FAILED...', error.text);
         },
       );
   };

@@ -12,18 +12,15 @@ const Authemail = () => {
           e.preventDefault();
           const email = e.target.email.value; // 👈 grab value from input
 
-          console.log("Attempting to sign in with email:", email);
           const res = await signIn("nodemailer", {
             email,
             redirect: false,
           });
 
-          console.log("Sign in response", res);
 
           if (res?.ok) {
             alert("Check your email for a sign-in link!");
           } else {
-            console.log(res?.error);
             alert("Authentication failed: check console");
           }
         }}

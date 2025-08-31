@@ -19,18 +19,15 @@ const Fullreviews = ({session}) => {
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
             //...doc.data() means to spread through .data()
             const reviewObject = {
                 id: doc.id,
                 ...doc.data()
             }
-            console.log(reviewObject)
             reviewArray.push(reviewObject)
 
         });
 
-        console.log(reviewArray);
         setReviews(reviewArray)
     }
 
@@ -49,7 +46,6 @@ const Fullreviews = ({session}) => {
             // FETCH AGAIN, SO AFTER DELETING IT CAN COME BACK
             fetchReviews();
         } catch (error) {
-            console.error("An error occured while deleting your document", error);
 
             alert("Oops, an error occured. Try again later!")
         }

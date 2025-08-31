@@ -27,7 +27,6 @@ const Reviews = ({ session, eventId }) => {
         try {
 
             if (!eventId) {
-                console.error("Event ID not found");
                 return;
             }
             setLoading(true)
@@ -47,10 +46,8 @@ const Reviews = ({ session, eventId }) => {
             const docRef = await addDoc(collection(db, "reviews"), reviewData);
             handleOpen()
 
-            console.log("Document written with ID: ", docRef.id);
             resetForm()
         } catch (error) {
-            console.error("Error adding data", error);
             alert("oops, an error occured.")
 
         }
