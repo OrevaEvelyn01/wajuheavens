@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
 
 
-            <div className='flex flex-col md:flex-row md:items-center justify-between gap-5 '>
+            <div className='flex flex-col md:flex-row items-center justify-between gap-5 '>
                 <p> &copy; WajuHeavens. All rights reserved.</p>
 
                 <div className='grid grid-cols-4 gap-x-3 items-start '>

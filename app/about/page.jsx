@@ -8,18 +8,19 @@ const page = () => {
             <div className='relative'>
                 <div className=' lg:bg-[#fffff0]  grid lg:grid-cols-2 '>
                     <div>
+
+                        <img src="https://i.pinimg.com/736x/a8/0a/92/a80a921e06e3eeb7bd6f8389e5af1f4a.jpg" alt=" wedding image" className=' max-lg:h-[100vh] max-lg:w-full'
+                        />
                     </div>
-                    <div className='z-50 p-13  '>
-                        <h1 className='text-7xl  font-semibold text-center  lg:text-left'>About Us</h1>
+                    <div className='z-50 p-13 max-lg:absolute max-lg:top-18 max-lg:text-[#fffff4a3] '>
+                        <h1 className='text-7xl  max-md:text-3xl font-semibold text-center   lg:text-left '>About Us</h1>
 
-                        <h2 className='text-4xl font-semibold mt-[120px] mb-[70px] lg:mt-[70px] text-center lg:text-left'>Who We Are</h2>
+                        <h2 className='text-5xl max-md:text-xl font-semibold mt-[120px] mb-[70px] lg:mt-[70px] max-md:mt-[30px] max-md:mb-[30px] text-center lg:text-left'>Who We Are</h2>
 
-                        <p className='text-base text- text-center lg:text-left ' >Waju Heavens is more than a wedding planner - we are storytellers of love. With a deep passion for creating sacred unions , we blend Christian values , creativity, and professionalism to design unforgettable weddings that reflect both your faith  and youur unique style.</p>
+                        <p className='text-[17px] max-md:text-sm text- text-center lg:text-left ' >Waju Heavens is more than a wedding planner - we are storytellers of love. With a deep passion for creating sacred unions , we blend Christian values , creativity, and professionalism to design unforgettable weddings that reflect both your faith  and youur unique style.</p>
                     </div>
                 </div>
 
-                <img src="https://i.pinimg.com/736x/a8/0a/92/a80a921e06e3eeb7bd6f8389e5af1f4a.jpg" alt=" wedding image" className='absolute top-0 h-[45vh] w-full lg:w-[50%] lg:min-h-[110vh]   lg:px-20 text-center mt-auto '
-                />
             </div>
 
 
@@ -68,7 +69,7 @@ const page = () => {
 
             </div>
 
-            <div  className='flex flex-col items-center mb-[40px]'>
+            <div className='flex flex-col items-center mb-[40px]'>
 
                 <h2 className='text-4xl font-bold my-[40px] text-center pt-10 text-black'>Our Vision </h2>
 
@@ -76,7 +77,7 @@ const page = () => {
             </div>
 
 
-            <div  className='flex flex-col items-center mb-[40px]'>
+            <div className='flex flex-col items-center mb-[40px]'>
 
                 <h2 className='text-4xl font-bold my-[40px] text-center pt-10 text-black'>Our Mission </h2>
 

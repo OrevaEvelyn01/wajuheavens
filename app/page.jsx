@@ -20,7 +20,6 @@ export default function Page() {
         id: doc.id,
         ...doc.data()
       }
-      console.log(reviewObject)
       reviewArray.push(reviewObject)
     });
 
@@ -218,6 +217,7 @@ export default function Page() {
         </div>
 
       </section>
+
     </main>
   );
 }
