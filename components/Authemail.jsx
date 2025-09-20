@@ -33,11 +33,11 @@ const Authemail = () => {
          name="email"
           placeholder="youremail@example.com"
           required
-         className='border rounded-full flex items-center justify-center border-gray-400 w-full gap-5 py-4 text-xl md:text-2xl text-[#073f3f] placeholder:text-center '
+         className='border rounded-full flex items-center justify-center border-gray-400 w-full gap-5 py-2 text-xl md:text-xl text-black text-center placeholder:text-center placeholder:pl-3 placeholder:text-sm'
         />
         <button
           type="submit"
-          className="bg-[#073f3f] text-white px-4 rounded-full w-full py-4 text-xl md:text-2xl"
+          className="bg-[#073f3f] text-white px-4 rounded-full w-full py-2 text-xl md:text-xl"
         >
           Sign in with Email
         </button>

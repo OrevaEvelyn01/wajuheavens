@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
 
-const Navbar = () => {
+const Navbar = ({ isAdmin }) => {
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -52,7 +52,7 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className=" flex bg-[#Fffff0] justify-between items-center py-10 px-8 shadow-md text-[#073f3f]">
+        <nav className=" flex bg-[#Fffff0] justify-between items-center py-6 px-8 shadow-md text-[#073f3f]">
             <Link href={"/"} className=" flex items-center gap-2">
 
                 <Image src={"/waju1.png"} alt="logo" width={1000} height={1000} className="w-8 h-8" />
@@ -75,6 +75,12 @@ const Navbar = () => {
                     </Link>
                 ))}
 
+
+                {/* new details */}
+                {isAdmin && <Link href="/admin"   className="text-lg
+                          
+                        hover:text-[black]  hover:border-b-1 transition duration-500">Admin</Link>}
+
                 {
                     session ? (<div>
                         <button
@@ -84,7 +90,7 @@ const Navbar = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                         >
-                            <img src={session?.user?.image} alt={session?.user?.name.slice(0, 1).toUpperCase() || "u"} className='w-10 h-10 rounded-full' />
+                            <img src={session?.user?.image}  alt={session.user.name?.[0]?.toUpperCase() || "U"} className='w-10 h-10 rounded-full' />
                         </button>
                         <Menu
                             id="basic-menu"
@@ -97,22 +103,23 @@ const Navbar = () => {
                                 },
                             }}
                         >
-                            <MenuItem onClick={handleClose}>
+                            {/* <MenuItem onClick={handleClose}>
                                 <Link href={"/profile"}> Profile</Link>
-                            </MenuItem>
-                            <MenuItem onClick={handleClose}><Link href={"/drop-reviews"}>Book your services</Link></MenuItem>
-                            <MenuItem onClick={handleClose} > <button onClick={() => signOut()}> Sign Out</button></MenuItem>
+                            </MenuItem> */}
+                            {/* <MenuItem onClick={handleClose}><Link href={"/drop-reviews"}>Book your services</Link></MenuItem>
+                            <MenuItem onClick={handleClose} > <button onClick={() => signOut()}> Sign Out</button></MenuItem> */}
                         </Menu>
 
                     </div>) : (<Link href={"/auth/signin"}
-                        className="text-lg hover:text-yellow-700 hover:underline">Sign In</Link>)
+                        className="text-lg
+                           hover:text-[black]  hover:border-b-1 transition duration-500">Sign In</Link>)
 
                 }
             </div>
 
             {/* mobile and tablet view */}
 
-            <div className=" lg:hidden z-50">
+            <div className="lg:hidden z-50">
                 <button onClick={() => setNavOpen(!navOpen)} className="text-2xl ">
                     {navOpen ? <IoMdClose /> : <RiMenu3Line />}
                 </button>
@@ -132,6 +139,8 @@ const Navbar = () => {
 
                         </Link>
                     ))}
+                    {/* new details */}
+                    {isAdmin && <Link href="/admin"  className=" text-2xl max-md:text-base  hover:border-b hover:text-[#000000]  transition duration-300" >Admin</Link>}
 
                     {
                         session ? (<div>
@@ -142,7 +151,7 @@ const Navbar = () => {
                                 aria-expanded={open ? 'true' : undefined}
                                 onClick={handleClick}
                             >
-                                <img src={session?.user?.image} alt={session?.user?.name.slice(0, 1).toUpperCase() || "u"} className='w-10 h-10 rounded-full' />
+                                <img src={session?.user?.image}   alt={session.user.name?.[0]?.toUpperCase() || "U"} className='w-10 h-10 rounded-full' />
                             </button>
                             <Menu
                                 id="basic-menu"
@@ -162,7 +171,7 @@ const Navbar = () => {
                             </Menu>
 
                         </div>) : (<Link href={"/auth/signin"}
-                            className="text-2xl hover:text-yellow-700 hover:underline">Sign In</Link>)
+                           className=" text-2xl max-md:text-base  hover:border-b hover:text-[#000000]  transition duration-300">Sign In</Link>)
 
                     }
                 </div>

@@ -9,10 +9,11 @@ const page = () => {
                 <div className=' lg:bg-[#fffff0]  grid lg:grid-cols-2 '>
                     <div>
 
-                        <img src="https://i.pinimg.com/736x/a8/0a/92/a80a921e06e3eeb7bd6f8389e5af1f4a.jpg" alt=" wedding image" className=' max-lg:h-[100vh] max-lg:w-full'
+                        <img src="https://i.pinimg.com/736x/a8/0a/92/a80a921e06e3eeb7bd6f8389e5af1f4a.jpg" alt=" wedding image" className=' lg:h-[90vh] max-lg:h-[70vh] w-full'
                         />
                     </div>
-                    <div className='z-50 p-13 max-lg:absolute max-lg:top-18 max-lg:text-[#fffff4a3] '>
+                    
+                    <div className='z-50 p-13 max-lg:absolute  max-lg:top-18 lg:place-content-center max-lg:text-[#fffff4a3] '>
                         <h1 className='text-7xl  max-md:text-3xl font-semibold text-center   lg:text-left '>About Us</h1>
 
                         <h2 className='text-5xl max-md:text-xl font-semibold mt-[120px] mb-[70px] lg:mt-[70px] max-md:mt-[30px] max-md:mb-[30px] text-center lg:text-left'>Who We Are</h2>

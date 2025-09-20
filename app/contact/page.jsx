@@ -13,8 +13,8 @@ const page = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm('service_olqljsh', 'template_hus61wl', form.current, {
-        publicKey: 'Axxex7S3SP2H1IVfj',
+      .sendForm('service_hhql56q', 'template_bo67ioo', form.current, {
+        publicKey: 'ZawDRzwg0yBzawN2l',
       })
       .then(
         (result) => {
