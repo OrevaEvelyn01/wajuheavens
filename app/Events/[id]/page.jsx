@@ -42,7 +42,7 @@ const page = async ({ params }) => {
     return (
         <main className='text-[#073f3f]'>
             <div className='flex flex-col gap-10'>
-                <div className='flex flex-col gap-10 items-center p-10 pb-5'>
+                <div className='flex flex-col gap-10 items-center max-md:px-3 p-10 pb-5'>
 
                     <h1 className=' text-4xl font-bold max-md:text-center'>{perReviews.title} 's story</h1>
 

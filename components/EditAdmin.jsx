@@ -33,24 +33,23 @@ const EditAdmin = ({ session }) => {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      
       setLoading(true);
 
       //object that would be sent to the database is below
-      const reviewData = {
+      const eventsData = {
         timestamp: new Date().toLocaleDateString(),
         userId: session.user.id,
-       
+
         ...values,
       };
 
-      const docRef = await addDoc(collection(db, "events"), reviewData);
+      const docRef = await addDoc(collection(db, "events"), eventsData);
       handleOpen();
 
       resetForm();
     } catch (error) {
       alert("oops, an error occured.");
-      console.error(error)
+      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -58,7 +57,11 @@ const EditAdmin = ({ session }) => {
 
   return (
     <div>
-      <section className="w-[91%] mt-10  mx-auto shadow-md p-3 rounded-md mt-">
+      <h1 className=" bg-[#073f3f] p-5  text-2xl text-[#fffff0] ">
+        Add Event Information
+      </h1>
+
+      <section className="w-[91%] my-10  mx-auto shadow-md p-3 rounded-md mt-">
         <Formik
           initialValues={initialValues}
           validationSchema={formValidation}
@@ -66,64 +69,81 @@ const EditAdmin = ({ session }) => {
         >
           <Form className=" ">
             <div>
-              <label className="text-base"> Add date</label>
-              <Field
-                as="textarea"
-                name="date"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
-              />
+              <div className=" grid lg:grid-cols-2 gap-2 lg:gap-8 mb-[32px]">
+                <div>
+                  <label className="text-base "> Add date</label>
+                  <Field
+                    type="date"
+                    name="date"
+                    className=" w-full outline-none bg-white p-2 py-[13px] rounded-md border border-gray-200"
+                  />
+                </div>
 
-              <label className="text-base"> Add description</label>
+                <div>
+                  <label className="text-base"> Add title</label>
 
-              <Field
-                as="textarea"
-                name="description"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
-              />
+                  <Field
+                    type="text"
+                    name="title"
+                    className=" w-full outline-none bg-white p-2 py-[13px] rounded-md border border-gray-200"
+                  />
+                  <ErrorMessage
+                    name="title"
+                    component={"p"}
+                    className="text-xs text-red-500"
+                  />
+                </div>
+              </div>
 
-              <label className="text-base"> Add details</label>
+              <label className="text-base  "> Add details</label>
 
               <Field
                 as="textarea"
                 name="details"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
-              />
-              <label className="text-base"> Add image</label>
-
-              <Field
-                as="textarea"
-                name="image"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
+                className=" w-full outline-none bg-white  rounded-md border border-gray-200"
               />
 
-              <label className="text-base"> Add story</label>
+              <div className="grid lg:grid-cols-2 gap-2 lg:gap-8">
+                <div>
+                  {" "}
+                  <label className="text-base"> Add description</label>
+                  <Field
+                    type="text"
+                    name="description"
+                    className=" w-full outline-none bg-white rounded-md border border-gray-200 p-2 py-[13px]"
+                  />
+                </div>
 
-              <Field
-                as="textarea"
-                name="story"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
-              />
+                <div>
+                  {" "}
+                  <label className="text-base"> Add image</label>
+                  <Field
+                    type="text"
+                    name="image"
+                    className=" w-full outline-none bg-white p-2 py-[13px]  rounded-md border border-gray-200"
+                  />
+                </div>
 
-              <label className="text-base"> Add testimonial</label>
+                <div>
+                  {" "}
+                  <label className="text-base"> Add story</label>
+                  <Field
+                    as="textarea"
+                    name="story"
+                    className=" w-full outline-none bg-white rounded-md border border-gray-200"
+                  />
+                </div>
 
-              <Field
-                as="textarea"
-                name="testimonial"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
-              />
-
-              <label className="text-base"> Add title</label>
-
-              <Field
-                as="textarea"
-                name="title"
-                className=" w-full outline-none bg-white p-2 rounded-md border border-gray-200"
-              />
-              <ErrorMessage
-                name="review"
-                component={"p"}
-                className="text-xs text-red-500"
-              />
+                <div>
+                  {" "}
+                  <label className="text-base"> Add testimonial</label>
+                  <Field
+                    as="textarea"
+                    name="testimonial"
+                    className=" w-full outline-none bg-white rounded-md border border-gray-200"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="flex justify-end">
@@ -131,12 +151,12 @@ const EditAdmin = ({ session }) => {
                 disabled={loading}
                 type="submit"
                 className="bg-[#073f3f] hover:bg-[#fffff0] hover:text-[#073f3f] 
-                            hover:border hover:border-[#073f3f]transition-colors duration-300 rounded-md  px-5 py-2 text-white text-xl"
+                            hover:border hover:border-[#073f3f]transition-colors duration-300 rounded-md  px-5 py-2 mt-4 text-white text-base"
               >
                 {loading ? (
-                  <FiLoader className="animate-spin text-2xl text-center" />
+                  <FiLoader className="animate-spin text-base text-center" />
                 ) : (
-                  "Post Comment"
+                  "Save"
                 )}
               </button>
             </div>

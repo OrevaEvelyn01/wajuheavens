@@ -15,7 +15,7 @@ if (!session || !admins.includes(session.user.email)) {
 
   return (
     <div>
-      <p>hello admin</p>
+     
       <EditAdmin session={session}/>
     </div>
   );

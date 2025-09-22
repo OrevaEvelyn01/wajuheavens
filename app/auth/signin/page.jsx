@@ -28,7 +28,7 @@ const page = async () => {
 
       <div className='lg:flex items-center justify-center lg:w-[55%] max-lg:p-3 '>
 
-        <section className='  min-h-dvh flex flex-col items-center justify-center gap-10 max-lg:p-3 max-lg:my-20 max-lg:shadow-lg max-lg:rounded-lg max-lg:max-w-[30rem] '>
+        <section className='  min-h-dvh flex flex-col items-center justify-center gap-10 max-lg:p-3 max-lg:my-20 max-lg:shadow-lg max-lg:rounded-lg max-lg:max-w-[30rem] max-md:h-[80vh] '>
           <h1 className='font-bold text-[#073f3f] text-3xl text-center md:text-4xl '> Sign in to your Account</h1>
           <div className='w-full space-y-5 max-md:px-2'>
 
