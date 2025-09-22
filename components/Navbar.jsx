@@ -127,20 +127,20 @@ const Navbar = ({ isAdmin }) => {
 
             <div className={` bg-orange-50 min-h-dvh overflow-hidden w-full fixed top-0 left-0 z-30 lg:hidden ${navOpen ? "block" : "hidden"} `}>
 
-                <div className=" flex flex-col items-center gap-16 max-md:gap-10 pt-20 ">
+                <div className=" flex flex-col items-center gap-16 max-lg:gap-8 pt-18 ">
 
                     {navItems.map((item, index) => (
 
                         <Link
                             onClick={() => setNavOpen(false)}
-                            key={index} href={item.url} className=" text-2xl max-md:text-base  hover:border-b hover:text-[#000000]  transition duration-300">
+                            key={index} href={item.url} className=" text-2xl max-lg:text-base  hover:border-b hover:text-[#000000]  transition duration-300">
 
                             {item.name}
 
                         </Link>
                     ))}
                     {/* new details */}
-                    {isAdmin && <Link href="/admin"  className=" text-2xl max-md:text-base  hover:border-b hover:text-[#000000]  transition duration-300" >Admin</Link>}
+                    {isAdmin && <Link href="/admin"  className=" text-2xl max-lg:text-base  hover:border-b hover:text-[#000000]  transition duration-300" >Admin</Link>}
 
                     {
                         session ? (<div>
@@ -171,7 +171,7 @@ const Navbar = ({ isAdmin }) => {
                             </Menu>
 
                         </div>) : (<Link href={"/auth/signin"}
-                           className=" text-2xl max-md:text-base  hover:border-b hover:text-[#000000]  transition duration-300">Sign In</Link>)
+                           className=" text-2xl max-lg:text-base  hover:border-b hover:text-[#000000]  transition duration-300">Sign In</Link>)
 
                     }
                 </div>

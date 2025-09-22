@@ -51,7 +51,7 @@ const Eventlist = ({isAdmin}) => {
             className="shadow-xl mb-10 max-md:ml-0 mt-10  rounded-md"
           >
             <div className="flex flex-col ">
-              <div className="row-span-2 ">
+              <div className="row-span-2">
                 <img
                   src={evnts.image}
                   alt="wedding picture"
