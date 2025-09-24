@@ -42,7 +42,7 @@ const page = async () => {
                 await signIn("google")
               }}
             >
-              <button className='border rounded-full flex items-center justify-center border-gray-400 w-full gap-5 py-2 text-xl md:text-xl text-[#073f3f]'>
+              <button className='border rounded-full flex items-center justify-center border-gray-400 w-full gap-5 py-2 text-xl md:text-xl text-[#073f3f] hover:bg-gray-200 active:bg-gray-100'>
                 <FcGoogle />
                 Google
 
@@ -57,7 +57,7 @@ const page = async () => {
                 await signIn("github")
               }}
             >
-              <button className='border rounded-full flex items-center justify-center border-gray-400 w-full gap-5 py-2 text-xl md:text-xl text-[#073f3f]'>
+              <button className='border rounded-full flex items-center justify-center border-gray-400 w-full gap-5 py-2 text-xl md:text-xl text-[#073f3f]  hover:bg-gray-200 active:bg-gray-100'>
                 <FaGithub />
                GitHub
 

@@ -5,12 +5,13 @@ import { useState } from "react";
 
 const Authemail = () => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("")
   return (
     <div>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          const email = e.target.email.value; // 👈 grab value from input
+          const email = e.target.email.value; //  grab value from input
 
           const res = await signIn("nodemailer", {
             email,
@@ -19,14 +20,16 @@ const Authemail = () => {
 
 
           if (res?.ok) {
-            alert("Check your email for a sign-in link!");
+           setMessage("Check your email for a sign-in link!");
           } else {
-            alert("Authentication failed: check console");
+            setMessage("Error, please try again")
           }
         }}
 
         className='flex flex-col gap-5'
       >
+
+        <p className='text-sm text-center pt-3'> {message}</p>
         <input
           type="email"
 
@@ -37,7 +40,7 @@ const Authemail = () => {
         />
         <button
           type="submit"
-          className="bg-[#073f3f] text-white px-4 rounded-full w-full py-2 text-xl md:text-xl"
+          className="bg-[#073f3f] text-white px-4 rounded-full w-full py-2 text-xl md:text-xl active:bg-[#073f3f] hover:bg-[#076363]"
         >
           Sign in with Email
         </button>

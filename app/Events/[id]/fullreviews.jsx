@@ -23,7 +23,7 @@ const Fullreviews = ({ session }) => {
 
     const q = query(collection(db, "reviews"), where("eventId", "==", id));
 
-    // 👇 replace getDocs with onSnapshot
+    //  replace getDocs with onSnapshot
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const reviewArray = [];
       querySnapshot.forEach((doc) => {

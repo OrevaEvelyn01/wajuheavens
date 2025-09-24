@@ -9,29 +9,34 @@ import { useState } from "react";
 
 const page = () => {
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const form = useRef();
 
- const sendEmail = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-  try {
-    await emailjs.sendForm(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      form.current,
-      { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
-    );
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
+      );
 
-    e.target.reset(); // clear the form on success
-  } catch (error) {
-    console.error("Email sending failed:", error);
-  } finally {
-    setLoading(false); // ✅ always stop loader
-  }
-};
+      setMessage("Your message has been sent successfully");
 
+      setTimeout(() => {
+        e.target.reset();
+        setMessage("");
+      }, 2000);
+    } catch (error) {
+      console.error("Email sending failed:", error);
+    } finally {
+      setLoading(false); // ✅ always stop loader
+    }
+  };
 
   return (
     <div className=" bg-linear-to-bl from-[#073f3f] to-[#fffff0] min-h-dvh flex flex-col  items-center justify-center gap-10 py-15">
@@ -76,6 +81,7 @@ const page = () => {
           </div>
 
           <div className="md:col-span-2 text-black">
+            <p className="text-center text-sm pt-3">{message}</p>
             <form
               ref={form}
               onSubmit={sendEmail}
