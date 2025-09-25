@@ -13,7 +13,7 @@ const page = () => {
                         />
                     </div>
                     
-                    <div className='z-40  p-13 max-lg:absolute  max-lg:top-18 lg:place-content-center max-lg:text-[#fffff4a3] '>
+                    <div className='p-13 max-lg:absolute  max-lg:top-18 lg:place-content-center max-lg:text-[#fffff4a3] '>
                         <h1 className='text-7xl  max-md:text-3xl font-semibold text-center   lg:text-left '>About Us</h1>
 
                         <h2 className='text-5xl max-md:text-xl font-semibold mt-[120px] mb-[70px] lg:mt-[70px] max-md:mt-[30px] max-md:mb-[30px] text-center lg:text-left'>Who We Are</h2>

@@ -93,6 +93,7 @@ const page = () => {
                   <input
                     type="text"
                     id="names"
+                    required
                     placeholder="Your name"
                     className=" outline-none border-0 border-b-1 w-full placeholder:text-base "
                     name="user_name"
@@ -104,6 +105,7 @@ const page = () => {
                   <input
                     type="email"
                     id="emails"
+                    required
                     placeholder="email@example.com"
                     className=" outline-none border-0 border-b-1 w-full placeholder:text-base "
                     name="user_email"
@@ -115,9 +117,10 @@ const page = () => {
                 <label htmlFor="subect">Subject</label>
                 <input
                   type="text"
+                  required
                   id="subject"
                   className=" outline-none border-0 border-b-1 w-full placeholder:text-base "
-                  name="user_phone"
+                  name="user_subject"
                 />
               </div>
 
@@ -126,6 +129,7 @@ const page = () => {
                 <textarea
                   name="message"
                   id="message"
+                  required
                   placeholder="Write your message"
                   className=" outline-none border-0 border-b-2 border-b-[#073f3f] w-full placeholder:text-base "
                 ></textarea>
@@ -134,11 +138,11 @@ const page = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-3 text-[#fffff0] rounded-md bg-[#073f3f] text-center"
+                className="px-6 py-3 text-[#fffff0] rounded-md bg-[#073f3f] flex items-center  justify-center"
               >
                 {" "}
                 {loading ? (
-                  <FiLoader className="animate-spin text-2xl text-center" />
+                  <FiLoader className="animate-spin text-2xl text-center " />
                 ) : (
                   "Send message"
                 )}

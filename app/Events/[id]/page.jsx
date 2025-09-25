@@ -37,7 +37,7 @@ const page = async ({ params }) => {
     if (!session) {
         redirect("/auth/signin")
     }
-    const { id } = await params; // 👈 await params first
+    const { id } = await params; //  await params first
     const perReviews = await singleReview(id);
     return (
         <main className='text-[#073f3f]'>

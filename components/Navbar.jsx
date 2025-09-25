@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
@@ -22,6 +22,21 @@ const Navbar = ({ isAdmin }) => {
     };
 
     const [navOpen, setNavOpen] = useState(false)
+    
+useEffect(() => {
+  if (navOpen) {
+    // prevent background scroll
+    document.body.style.overflow = "hidden";
+  } else {
+    
+    document.body.style.overflow = "auto";
+  }
+
+ 
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [navOpen]);
     const { data: session } = useSession()
 
     const navItems = [
