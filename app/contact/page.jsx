@@ -3,7 +3,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { FiLoader } from "react-icons/fi";
 import { useState } from "react";
 
@@ -13,30 +12,37 @@ const page = () => {
 
   const form = useRef();
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+ const sendEmail = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
-      );
+  const formData = new FormData(form.current);
+  const data = Object.fromEntries(formData);
 
-      setMessage("Your message has been sent successfully");
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
-      setTimeout(() => {
-        e.target.reset();
-        setMessage("");
-      }, 2000);
-    } catch (error) {
-      console.error("Email sending failed:", error);
-    } finally {
-      setLoading(false); // ✅ always stop loader
+    const result = await res.json();
+
+    if (result.success) {
+      setMessage("Your message has been sent successfully ✅");
+      e.target.reset();
+    } else {
+      setMessage(result.error || "Something went wrong ❌");
     }
-  };
+  } catch (err) {
+    console.error("Error:", err);
+    setMessage("Failed to send message ❌");
+  } finally {
+    setLoading(false);
+    setTimeout(() => setMessage(""), 3000);
+  }
+};
+
 
   return (
     <div className=" bg-linear-to-bl from-[#073f3f] to-[#fffff0] min-h-dvh flex flex-col  items-center justify-center gap-10 py-15">
@@ -63,8 +69,8 @@ const page = () => {
               <FaPhoneAlt className="text-[#Fffff0]" />
 
               <div className="flex flex-col">
-                <span> +2349044639999</span>
-                <span> +2349902746849</span>
+                <span> +2348144583926</span>
+                <span> +2349067836007</span>
               </div>
             </div>
 
@@ -96,7 +102,7 @@ const page = () => {
                     required
                     placeholder="Your name"
                     className=" outline-none border-0 border-b-1 w-full placeholder:text-base "
-                    name="user_name"
+                    name="name"
                   />
                 </div>
 
@@ -108,7 +114,7 @@ const page = () => {
                     required
                     placeholder="email@example.com"
                     className=" outline-none border-0 border-b-1 w-full placeholder:text-base "
-                    name="user_email"
+                    name="email"
                   />
                 </div>
               </div>
@@ -120,7 +126,7 @@ const page = () => {
                   required
                   id="subject"
                   className=" outline-none border-0 border-b-1 w-full placeholder:text-base "
-                  name="user_subject"
+                  name="subject"
                 />
               </div>
 
