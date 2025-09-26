@@ -82,7 +82,7 @@ export default function Page() {
               alt={"Wedding Photos"}
               width={1000}
               height={1000}
-              className="w-full relative max-[450px]:h-[60vh] h-[65vh] lg:h-[75vh]  "
+              className="w-full relative max-[450px]:h-[50vh] h-[65vh] lg:h-[75vh]  "
 
             />
             <div className="flex gap-4 absolute bottom-5 right-10" >
